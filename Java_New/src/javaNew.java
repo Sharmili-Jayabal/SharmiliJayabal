@@ -1,6 +1,9 @@
 
 //comment the above line and uncomment below line to use Chrome
+import java.util.ArrayList;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -49,7 +52,20 @@ public class javaNew {
        driver.findElement(By.xpath("//*[@id=\"content\"]/div[2]/div/form/input[4]")).click();
        Thread.sleep(10000);
        
-      
+      //Open link in new tabs
+		driver.get("https://demoqa.com/html-contact-form");
+       String SelectLinkNewTab= Keys.chord(Keys.CONTROL,Keys.RETURN);
+       driver.findElement(By.linkText("Google Link")).sendKeys(SelectLinkNewTab);
+       driver.findElement(By.linkText("Google Link is here")).sendKeys(SelectLinkNewTab);
+       ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
+       
+       driver.switchTo().window(tabs.get(1));
+       Thread.sleep(10000);
+       driver.switchTo().window(tabs.get(0));
+       Thread.sleep(10000);
+       driver.switchTo().window(tabs.get(2));
+       System.out.println("Passed");
+       
 		// Darg and drop
 		 driver.get("https://demoqa.com/droppable"); Thread.sleep(10000);		 
 		 WebElement From = driver.findElement(By.xpath("//*[@id='draggable']"));
