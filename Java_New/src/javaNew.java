@@ -83,7 +83,50 @@ public class javaNew {
        driver.findElement(By.xpath("//*[@id=\"ui-datepicker-div\"]/table/tbody/tr[1]/td[7]/a")).click();
        Thread.sleep(10000);
        System.out.println("passed");
-        //close Chrome
+       
+       //Select menu options one by one
+       driver.get("https://demoqa.com/selectmenu/");
+       Thread.sleep(10000);
+       
+       driver.findElement(By.xpath("//*[@id='speed-button']/span[2]")).click();
+       driver.findElement(By.xpath("//*[@id='ui-id-2']")).click();
+       Thread.sleep(10000);
+       
+       driver.findElement(By.xpath("//*[@id='speed-button']/span[2]")).click();
+       driver.findElement(By.xpath("//*[@id='ui-id-3']")).click();
+       Thread.sleep(10000);
+       
+       driver.findElement(By.xpath("//*[@id='files-button']/span[2]"));
+       Thread.sleep(2000);
+       driver.findElement(By.xpath("//*[@id='ui-id-9']")).click();
+       Thread.sleep(10000);
+       
+       driver.findElement(By.xpath("//*[@id='number-button']/span[2]")).click();
+       Thread.sleep(2000);
+       driver.findElement(By.id("//*[@id='ui-id-12']")).click();
+       Thread.sleep(10000);
+       
+       driver.findElement(By.xpath("//*[@id='salutation-button']/span[2]")).click();
+       driver.findElement(By.id("//*[@id='ui-id-31']")).click();
+       Thread.sleep(10000);
+      
+       //Rental car block
+       driver.get("https://demoqa.com/controlgroup");
+       Thread.sleep(10000);
+       driver.findElement(By.xpath("//*[@id='car-type-button']/span[2]")).click();
+       Thread.sleep(2000);
+       driver.findElement(By.id("transmission-automatic")).click();
+       Thread.sleep(2000);
+       driver.findElement(By.id("insurance")).click();
+       Thread.sleep(2000);
+       driver.findElement(By.xpath("//*[@id='horizontal-spinner']")).sendKeys("1");
+       Thread.sleep(2000);
+       driver.findElement(By.id("transmission-standard-v")).click();
+       Thread.sleep(2000);
+      driver.findElement(By.xpath("//*[@id='book']")).click();
+      System.out.println("Passed");
+       	//close Chrome
+  
         driver.close();
 	}
 
