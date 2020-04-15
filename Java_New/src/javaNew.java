@@ -103,6 +103,7 @@ public class javaNew {
        
        driver.findElement(By.xpath("//*[@id='number-button']/span[2]")).click();
        Thread.sleep(2000);
+       
        driver.findElement(By.id("//*[@id='ui-id-12']")).click();
        Thread.sleep(10000);
        

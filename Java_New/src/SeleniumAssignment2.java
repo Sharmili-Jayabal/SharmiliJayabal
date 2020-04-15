@@ -33,6 +33,7 @@ public class SeleniumAssignment2 {
        
        driver.findElement(By.xpath("//*[@id='phdesktopbody_0_submit']")).click();
        
+       
        //Spain
        driver.get("https://www.olay.es/es-es");
        Thread.sleep(2000);
